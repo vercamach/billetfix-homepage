@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 * {
     box-sizing: border-box;
-    color: white
+    
 }
 
 html {
@@ -15,14 +15,8 @@ body {
     height: 100%;
 }
 
-div#navDiv {
-    margin: 16px;
-    padding: 0;
-}
 
-a {margin-left: 1em;
-    text-decoration: none;
-}
+
 
 a:hover {
     color: #ff4a6e;
