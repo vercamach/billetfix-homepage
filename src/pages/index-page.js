@@ -7,6 +7,8 @@ import CseImg from '../img/cse.jpg'
 import FondenImg from '../img/fonden.png'
 import TicketButlerImg from '../img/ticketbutler.png'
 import TinyRhinoImg from '../img/tiny-rhino.png'
+import IconTeaser from '../img/icon-teaser.png'
+
 let styles = {
   sectionIntro: {
     textAlign: 'center',
@@ -43,8 +45,8 @@ let styles = {
     position: 'absolute',
     top: '0',
     left: '0',
-    minWidth: '100vw',
-    minHeight: '100vh',
+    Width: '100%',
+    height: 'auto',
     filter: 'brightness(40%) contrast(70%)',
   },
   introText: {
@@ -81,15 +83,26 @@ let styles = {
     color: '#fff',
     letterSpacing: '3px',
     padding: '15px 10px',
-    margin: '60px auto',
+    marginTop: '60px',
+    marginBottom: '40px',
     borderTopLeftRadius: '0',
     borderBottomLeftRadius: '0',
     fontSize: '15px',
     border: '1px solid #ff4a6e',
   },
 
+  linkToFeatures: {
+    textTransform: 'uppercase',
+    color: '#fff',
+    textDecoration: 'none',
+    letterSpacing: '2px',
+    fontWeight: '100',
+  },
+
   partnerLogosDiv: {
     display: 'flex',
+    background: '#fff',
+    zIndex: '1',
     flexFlow: 'row wrap',
     width: '100%',
     justifyContent: 'space-around',
@@ -103,16 +116,18 @@ let styles = {
     filter: 'grayscale(100%)',
   },
   h3Teaser: {
-    fontSize: '2em',
+    fontSize: '30px',
+    letterSpacing: '3px',
     lineHeight: '1.2em',
     margin: '.25em 0',
     color: '#ff4a6e',
     fontWeight: '100',
   },
   pTeaser: {
-    lineHeight: '1.8em',
-    marginTop: '1em',
-    fontSize: '1.1em',
+    lineHeight: '30px',
+    letterSpacing: '2px',
+    marginTop: '16px',
+    fontSize: '16px',
     color: '#333',
     fontWeight: '100',
   },
@@ -120,17 +135,19 @@ let styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingLeft: '6%',
-    paddingRight: '6%',
     overflow: 'hidden',
     background: '#f7f7f7',
-    padding: '7em 0',
+    padding: '7em 6%',
     position: 'relative',
   },
   divTeaserDetails: {
     maxWidth: '50%',
     minWidth: '33%',
     padding: '0 10px',
+  },
+  iconTeaser: {
+    height: '200px',
+    marginRight: '200px',
   },
 }
 
@@ -158,10 +175,16 @@ const IndexPage = () => (
           start selling
         </button>
       </div>
-      <div> </div>
-      <button style={styles.videoButton} class="cta" id="see_video">
-        see video
-      </button>
+      <div>
+        <button style={styles.videoButton} className="cta" id="see_video">
+          see video
+        </button>
+      </div>
+      <div>
+        <a style={styles.linkToFeatures} href="features">
+          see how easy it is
+        </a>
+      </div>
     </section>
 
     {/* Partner section */}
@@ -173,11 +196,7 @@ const IndexPage = () => (
       <img style={styles.partnerLogosImg} src={CseImg} />
     </div>
 
-    <section
-      style={styles.sectionTeaser}
-      id="teaser"
-      className="component flex"
-    >
+    <section style={styles.sectionTeaser} id="teaser">
       <div style={styles.divTeaserDetails} className="details">
         <h3 style={styles.h3Teaser}>
           Are you organizing an event for your fellow students?
@@ -192,7 +211,7 @@ const IndexPage = () => (
         </p>
       </div>
       <div className="icon">
-        <h1> svg missing</h1>
+        <img style={styles.iconTeaser} src={IconTeaser} alt="iconTeaser" />
       </div>
     </section>
   </div>
