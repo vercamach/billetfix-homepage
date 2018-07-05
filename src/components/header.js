@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Logo from '../img/logox400.png'
+import '../layouts/styles/layout-overide.css'
 
 let headerStyles = {
   div: {
