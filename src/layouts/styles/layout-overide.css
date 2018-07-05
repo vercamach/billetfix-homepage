@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 * {
     box-sizing: border-box;
     
@@ -14,11 +14,14 @@ body {
     font-family: Quicksand, sans-serif;
     height: 100%;
 }
-
-
-
-
+button{
+    text-transform: uppercase !important;
+}
+button:hover{
+    background: white !important;
+    color: #ff4a6e !important;
+}
 a:hover {
-    color: #ff4a6e;
+    color: #ff4a6e !important;
     text-decoration: none
 }
