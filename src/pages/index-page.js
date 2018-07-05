@@ -11,6 +11,7 @@ let styles = {
   sectionIntro: {
     textAlign: 'center',
     paddingBottom: '2%',
+    paddingTop: '62px',
     backgroungImage: 'Img',
     justifyContent: 'center',
     alignItems: 'center',
@@ -24,15 +25,18 @@ let styles = {
     color: 'white',
     display: 'block',
     margin: '17.6px 0',
-    fontSize: '21px',
-    lineHeight: '43px',
+    fontSize: '20px',
+    lineHeight: '39px',
     fontWeight: '100',
+    letterSpacing: '2px',
   },
   h1: {
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: '#ff4a6e',
     textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
-    fontSize: '45px',
+    fontSize: '43px',
+    lineHeight: '72px',
+    letterSpacing: '5px',
   },
   img: {
     zIndex: '-1',
@@ -44,18 +48,18 @@ let styles = {
     filter: 'brightness(40%) contrast(70%)',
   },
   introText: {
-    marginTop: '50px',
+    marginTop: '0',
   },
   getStarted: {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '60px',
+    marginTop: '57px',
   },
   getStartedInput: {
-    fontSize: '1.2em',
-    fontWeight: 'bold',
-    padding: '15px',
-    width: '360px',
+    fontSize: '18px',
+    padding: '10px',
+    width: '365px',
+    height: '56px',
     border: '.5px solid #ff4a6e',
 
     borderRadius: '3px',
@@ -63,13 +67,25 @@ let styles = {
   getStartedButton: {
     background: '#ff4a6e',
     color: '#fff',
-    letterSpacing: '2px',
-    padding: '20px 30px',
+    letterSpacing: '3px',
+    padding: '16px 17px',
     margin: '0',
     borderTopLeftRadius: '0',
     borderBottomLeftRadius: '0',
-    fontSize: '17px',
-    border: 'none',
+    fontSize: '15px',
+    border: '1px solid #ff4a6e',
+  },
+
+  videoButton: {
+    background: '#ff4a6e',
+    color: '#fff',
+    letterSpacing: '3px',
+    padding: '15px 10px',
+    margin: '60px auto',
+    borderTopLeftRadius: '0',
+    borderBottomLeftRadius: '0',
+    fontSize: '15px',
+    border: '1px solid #ff4a6e',
   },
 
   partnerLogosDiv: {
@@ -81,10 +97,9 @@ let styles = {
   },
   partnerLogosImg: {
     objectFit: 'contain',
-
     maxHeight: '80px',
     maxWidth: '192px',
-    paddingLeft: '30px',
+    padding: '16px',
     filter: 'grayscale(100%)',
   },
   h3Teaser: {
@@ -137,14 +152,16 @@ const IndexPage = () => (
           style={styles.getStartedInput}
           id="event-title"
           type="text"
-          placeholder="Your event title goes here"
+          placeholder="Your event title goes here..."
         />
         <button id="start" className="cta" style={styles.getStartedButton}>
-          START SELLING
+          start selling
         </button>
       </div>
-
-      {/* Missing video */}
+      <div> </div>
+      <button style={styles.videoButton} class="cta" id="see_video">
+        see video
+      </button>
     </section>
 
     {/* Partner section */}
