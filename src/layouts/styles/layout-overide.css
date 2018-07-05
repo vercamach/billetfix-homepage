@@ -25,3 +25,11 @@ a:hover {
     color: #ff4a6e !important;
     text-decoration: none
 }
+.scroll-header {
+    background: #f7f7f7 !important;
+    
+}
+
+.scroll-header :nth-child(n + 2){
+    color: black!important;
+}
