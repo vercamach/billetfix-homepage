@@ -5,7 +5,6 @@ import '../layouts/styles/layout-overide.css'
 
 let headerStyles = {
   nav: {
-    color: '#f7f7f7',
     padding: '15px 5%',
     top: '0',
     width: '100%',
@@ -13,6 +12,7 @@ let headerStyles = {
     position: 'fixed',
     justifyContent: 'space-between',
     zIndex: '999',
+    transition: 'all 0.5s',
   },
   createEvent: {
     margin: '-11px auto',
@@ -39,16 +39,14 @@ let headerStyles = {
     display: 'inline-block',
     padding: '0 10px',
     fontSize: '13px',
-    color: 'white',
-  },
-  linkHover: {
-    color: '#ff4a6e',
+    color: '#f7f7f7',
+    transition: 'all 0.5s',
   },
 }
 
 const Header = ({ siteTitle }) => (
   <div>
-    <nav style={headerStyles.nav}>
+    <nav id="nav" style={headerStyles.nav}>
       <Link to="/index-page/">
         <img
           src={Logo}
@@ -77,20 +75,31 @@ const Header = ({ siteTitle }) => (
           {' '}
           FAQ{' '}
         </Link>
-        <Link style={headerStyles.link} to="/enterprise-solution/">
+        <Link
+          className="link"
+          style={headerStyles.link}
+          to="/enterprise-solution/"
+        >
           {' '}
           Enterprise solution{' '}
         </Link>
-        <Link style={headerStyles.link} to="/my-tickets/">
+        <Link className="link" style={headerStyles.link} to="/my-tickets/">
           {' '}
           My tickets{' '}
         </Link>
-        <Link style={headerStyles.link} to="/login/">
+        <Link id="link" style={headerStyles.link} to="/login/">
           Login
         </Link>
       </div>
     </nav>
   </div>
 )
+{
+  window.onscroll = () => {
+    const nav = document.getElementById('nav')
 
+    if (scrollY <= 10) (nav.className = ''), (link.className = '')
+    else (nav.className = 'scroll-header'), (link.className = 'scroll-link')
+  }
+}
 export default Header
