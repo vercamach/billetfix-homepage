@@ -11,6 +11,7 @@ import IconTeaser from '../img/icon-teaser.png'
 import Features1 from '../img/features1.png'
 import Features2 from '../img/features2.png'
 import Features3 from '../img/features3.png'
+import PaymentIcon from '../img/payment.png'
 
 let styles = {
   sectionIntro: {
@@ -172,6 +173,7 @@ let styles = {
     lineHeight: '38px',
     fontWeight: '500',
     letterSpacing: '2px',
+    marginTop: '19px',
   },
   pFeatures: {
     fontSize: '16px',
@@ -180,6 +182,45 @@ let styles = {
     letterSpacing: '2px',
     textAlign: 'justify',
     margin: '10px',
+  },
+  sectionPayment: {
+    display: 'flex',
+    flexDirection: 'row-reverse',
+
+    alignItems: 'center',
+    boxPack: 'justify',
+    padding: '112px 83px',
+    background: '#f7f7f7',
+  },
+  divPayment: {
+    padding: '15px',
+  },
+  h3Payment: {
+    color: '#ff4a6e',
+    fontSize: '30px',
+    lineHeight: '40px',
+    margin: '.25em 0',
+    fontWeight: '100',
+    letterSpacing: '2px',
+  },
+  pMobilepay: {
+    fontWeight: '500',
+    padding: '15px 0',
+    textAlign: 'right',
+    fontSize: '18px',
+    lineHeight: '17px',
+  },
+  pTextPayment: {
+    lineHeight: '20px',
+    marginTop: '16px',
+    fontSize: '16px',
+    fontWeight: '100',
+    letterSpacing: '1px',
+    textAlign: 'right',
+  },
+  imgPayment: {
+    width: '19%',
+    marginRight: '137px',
   },
 }
 
@@ -288,6 +329,21 @@ const IndexPage = () => (
           and the money deposited to your bank account.
         </p>
       </div>
+    </section>
+    {/* PAYMENT */}
+    <section style={styles.sectionPayment}>
+      <div style={styles.divPayment}>
+        <h3 style={styles.h3Payment}>
+          Guests can pay with MobilePay or their credit card
+        </h3>
+        <p style={styles.pMobilepay}>50% of our users pay with MobilePay.</p>
+        <p style={styles.pTextPayment}>
+          After the event has competed, your money is deposited directly into
+          your bank account.
+        </p>
+      </div>
+
+      <img style={styles.imgPayment} src={PaymentIcon} alt="payment icon" />
     </section>
   </div>
 )
