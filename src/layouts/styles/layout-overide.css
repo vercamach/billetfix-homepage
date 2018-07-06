@@ -32,4 +32,8 @@ a:hover {
 
 .scroll-header :nth-child(n + 2){
     color: black!important;
+
+}
+.scroll-header a:hover {
+    color: #ff4a6e !important;
 }
