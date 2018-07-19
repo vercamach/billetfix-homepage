@@ -96,12 +96,17 @@ const NewTicket = ({}) => (
             placeholder="Pcs"
           />
         </TicketTypeLabel>
-        <a className="delete-row" href="javascript:void(0)">
+        <a
+          className="delete-row"
+          href="javascript:void(0)"
+          onClick={removeTicket}
+        >
           <DeleteIcon className="trash" src={Trash} alt="trash" />
         </a>
       </div>
     </TicketBox>
   </div>
 )
+function removeTicket() {}
 
 export default NewTicket
