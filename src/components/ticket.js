@@ -69,8 +69,6 @@ const NewTicket = ({}) => (
             name="form-0-title"
             placeholder="Entry / Standing / Gold / VIP"
             maxlength="32"
-            value=""
-            className=""
           />
         </TicketTypeLabel>
 
@@ -84,8 +82,6 @@ const NewTicket = ({}) => (
             min="0"
             placeholder="kr - or '0' for FREE"
             step="1"
-            value=""
-            className=""
           />
         </TicketTypeLabel>
 
@@ -98,8 +94,6 @@ const NewTicket = ({}) => (
             id="id_amount"
             name="form-0-amount"
             placeholder="Pcs"
-            value=""
-            className=""
           />
         </TicketTypeLabel>
         <a className="delete-row" href="javascript:void(0)">
@@ -109,7 +103,5 @@ const NewTicket = ({}) => (
     </TicketBox>
   </div>
 )
-function addTicket() {
-  console.log('hi mom')
-}
+
 export default NewTicket
