@@ -7,6 +7,7 @@ import Ticket from '../img/ticket.png'
 import Trash from '../img/trash.png'
 import AddButton from '../img/plus-button.png'
 import NewTicket from '../components/ticket.js'
+
 const Section = styled.section`
   padding: 125px 6%;
   overflow: hidden;
@@ -90,8 +91,7 @@ const Input = styled.input`
   border-radius: 3px;
   letter-letterspacing: 1px;
 `
-let wrapper = document.getElementById('wrapper')
-
+let tickets = []
 const CreateEvent = () => (
   <Section>
     <form action="." method="POST" acceptCharset="utf-8" id="event-form">
@@ -142,6 +142,7 @@ const CreateEvent = () => (
         {' '}
         <Icon src={Ticket} alt="ticket" /> Create Ticket
       </TicketTypeLabel>
+
       <div id="wrapper" className="ticket-types" style={wrapperStyle}>
         <NewTicket />
 
@@ -152,13 +153,24 @@ const CreateEvent = () => (
           </a>
         </TicketBox>
       </div>
+
+      <p className="tcs">
+        By clicking "Create" you're agreeing to
+        <a href="/en/tandc/#tandc-organiser" target="_blank">
+          the T&amp;C's
+        </a>.
+      </p>
+      <button className="createEventButton">Create event</button>
     </form>
   </Section>
 )
-
-function addTicket() {
-  console.log('hi mom')
-  console.log(wrapper)
-  console.log(NewTicket)
+{
+  let span = document.getElementById('span')
+  let wrapper = document.getElementById('wrapper')
 }
+function addTicket() {
+  tickets.push(NewTicket)
+  console.log(tickets)
+}
+
 export default CreateEvent
