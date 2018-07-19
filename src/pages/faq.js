@@ -267,7 +267,9 @@ const about = () => (
               info@billetfix.dk if you’re interested in getting access.
             </p>
           </li>
-          <h3>Guest</h3>
+        </ul>
+        <h3> Guest</h3>
+        <ul>
           <li id="15">
             <h4>I HAVEN'T RECEIVED MY TICKET WHAT DO I DO?</h4>
             <p>
