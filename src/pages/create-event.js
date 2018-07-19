@@ -6,6 +6,7 @@ import Calendar from '../img/calendar.png'
 import Ticket from '../img/ticket.png'
 import Trash from '../img/trash.png'
 import AddButton from '../img/plus-button.png'
+import NewTicket from '../components/ticket.js'
 const Section = styled.section`
   padding: 125px 6%;
   overflow: hidden;
@@ -39,7 +40,8 @@ const Icon = styled.img`
   margin: 0 5px;
 `
 const NewTicketWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 `
 const TicketBox = styled.div`
   border: 1px solid #ff4a6e;
@@ -181,9 +183,13 @@ const CreateEvent = () => (
             </a>
           </div>
         </TicketBox>
+        <NewTicket />
+        <NewTicket />
+        <NewTicket />
+        <NewTicket />
 
         <TicketBox>
-          <a class="add-row" href="javascript:void(0)" onClick={addTicket}>
+          <a className="add-row" href="javascript:void(0)">
             <img className="addButton" src={AddButton} alt="add-button" />
             <p>Add new ticket type</p>
           </a>
@@ -192,7 +198,5 @@ const CreateEvent = () => (
     </form>
   </Section>
 )
-function addTicket() {
-  console.log('hi mom')
-}
+
 export default CreateEvent
