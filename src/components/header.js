@@ -36,6 +36,7 @@ let headerStyles = {
   link: {
     marginLeft: '16px',
     textDecoration: 'none',
+
     display: 'inline-block',
     padding: '0 10px',
     fontSize: '13px',
@@ -75,14 +76,10 @@ const Header = ({ siteTitle }) => (
           {' '}
           FAQ{' '}
         </Link>
-        <Link
-          className="link"
-          style={headerStyles.link}
-          to="/enterprise-solution/"
-        >
+        <a style={headerStyles.link} href="https://ticketbutler.io/da/">
           {' '}
           Enterprise solution{' '}
-        </Link>
+        </a>
         <Link className="link" style={headerStyles.link} to="/my-tickets/">
           {' '}
           My tickets{' '}
