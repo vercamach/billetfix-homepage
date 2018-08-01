@@ -15,6 +15,7 @@ import PaymentIcon from '../img/payment.png'
 
 let styles = {
   sectionIntro: {
+    display: 'flex',
     textAlign: 'center',
     paddingBottom: '2%',
     paddingTop: '62px',
@@ -49,8 +50,8 @@ let styles = {
     position: 'absolute',
     top: '0',
     left: '0',
-    Width: '100%',
-    height: 'auto',
+    minWidth: '100vw',
+    minHeight: '100vh',
     filter: 'brightness(40%) contrast(70%)',
   },
   introText: {
@@ -226,37 +227,39 @@ let styles = {
 
 const IndexPage = () => (
   <div>
-    <section style={styles.sectionIntro}>
-      <div style={styles.introText}>
-        <img src={Img} alt="background" style={styles.img} />
-        <h1 style={styles.h1}>It's never been easier to manage events</h1>
-        <span style={styles.span}>Free to use for the organizer</span>
-        <span style={styles.span}>Ultra low fees</span>
-        <span style={styles.span}>Ready to receive payments in seconds</span>
-        <span style={styles.span}>Integrate for free on your website</span>
-      </div>
+    <section id="intro-section" style={styles.sectionIntro}>
+      <div>
+        <div style={styles.introText}>
+          <img src={Img} alt="background" style={styles.img} />
+          <h1 style={styles.h1}>It's never been easier to manage events</h1>
+          <span style={styles.span}>Free to use for the organizer</span>
+          <span style={styles.span}>Ultra low fees</span>
+          <span style={styles.span}>Ready to receive payments in seconds</span>
+          <span style={styles.span}>Integrate for free on your website</span>
+        </div>
 
-      {/* CREATE EVENT */}
-      <div style={styles.getStarted} className="get-started">
-        <input
-          style={styles.getStartedInput}
-          id="event-title"
-          type="text"
-          placeholder="Your event title goes here..."
-        />
-        <button id="start" className="cta" style={styles.getStartedButton}>
-          start selling
-        </button>
-      </div>
-      <div>
-        <button style={styles.videoButton} className="cta" id="see_video">
-          see video
-        </button>
-      </div>
-      <div>
-        <a style={styles.linkToFeatures} href="features">
-          see how easy it is
-        </a>
+        {/* CREATE EVENT */}
+        <div style={styles.getStarted} className="get-started">
+          <input
+            style={styles.getStartedInput}
+            id="event-title"
+            type="text"
+            placeholder="Your event title goes here..."
+          />
+          <button id="start" className="cta" style={styles.getStartedButton}>
+            start selling
+          </button>
+        </div>
+        <div>
+          <button style={styles.videoButton} className="cta" id="see_video">
+            see video
+          </button>
+        </div>
+        <div>
+          <a style={styles.linkToFeatures} href="features">
+            see how easy it is
+          </a>
+        </div>
       </div>
     </section>
 
@@ -345,6 +348,10 @@ const IndexPage = () => (
 
       <img style={styles.imgPayment} src={PaymentIcon} alt="payment icon" />
     </section>
+    <style jsx>{`section"intro-section{
+      background-image: url("../img/lights.jpg");
+    }
+    `}</style>
   </div>
 )
 

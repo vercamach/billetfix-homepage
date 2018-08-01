@@ -40,10 +40,6 @@ const Icon = styled.img`
 
   margin: 0 5px;
 `
-let wrapperStyle = {
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr 1fr',
-}
 
 const TicketBox = styled.div`
   border: 1px solid #ff4a6e;
@@ -91,86 +87,117 @@ const Input = styled.input`
   border-radius: 3px;
   letter-letterspacing: 1px;
 `
-let tickets = []
-const CreateEvent = () => (
-  <Section>
-    <form action="." method="POST" acceptCharset="utf-8" id="event-form">
-      <Input
-        type="hidden"
-        name="csrfmiddlewaretoken"
-        value="ntJg983VNqfcurgSD3O2XwFn556nWKSF3EPMxjTgIBZWDtCTUftSVKvpViqKjQzP"
-      />
-      <Details className="details">
-        <label htmlFor="id_event_title">
-          <Icon src={Smiley} alt="smiley" />
-          Event Title
-          <Input
-            required=""
-            id="id_event_title"
-            type="text"
-            maxlength="128"
-            name="title"
-            placeholder="Go on..."
-            htmlFor="id_title"
-            value=""
-            className=""
-          />
-        </label>
-        <label className="marg-left" htmlFor="id_start_date">
-          <Icon src={Calendar} alt="calendar" />
-          Event date
-          <Input
-            required=""
-            id="id_start_date"
-            className="jQdatePicker"
-            name="start_date"
-            type="date"
-          />
-        </label>
-        <label className="marg-left" id="start-time" htmlFor="id_start_time">
-          Event time
-          <Input
-            required=""
-            id="id_start_time"
-            className="jQtimePicker"
-            name="start_time"
-            type="time"
-          />
-        </label>
-      </Details>
-      <TicketTypeLabel>
-        {' '}
-        <Icon src={Ticket} alt="ticket" /> Create Ticket
-      </TicketTypeLabel>
 
-      <div id="wrapper" className="ticket-types" style={wrapperStyle}>
-        <NewTicket />
+class CreateEvent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tickets: [{ NewTicket }],
+    }
+  }
 
-        <TicketBox>
-          <a className="add-row" href="javascript:void(0)" onClick={addTicket}>
-            <p>Add new ticket type</p>
-            <img className="addButton" src={AddButton} alt="add-button" />
-          </a>
-        </TicketBox>
-      </div>
+  render() {
+    return (
+      <Section>
+        <form action="." method="POST" acceptCharset="utf-8" id="event-form">
+          <Input
+            type="hidden"
+            name="csrfmiddlewaretoken"
+            value="ntJg983VNqfcurgSD3O2XwFn556nWKSF3EPMxjTgIBZWDtCTUftSVKvpViqKjQzP"
+          />
+          <Details className="details">
+            <label htmlFor="id_event_title">
+              <Icon src={Smiley} alt="smiley" />
+              Event Title
+              <Input
+                required=""
+                id="id_event_title"
+                type="text"
+                maxlength="128"
+                name="title"
+                placeholder="Go on..."
+                htmlFor="id_title"
+                value=""
+                className=""
+              />
+            </label>
+            <label className="marg-left" htmlFor="id_start_date">
+              <Icon src={Calendar} alt="calendar" />
+              Event date
+              <Input
+                required=""
+                id="id_start_date"
+                className="jQdatePicker"
+                name="start_date"
+                type="date"
+              />
+            </label>
+            <label
+              className="marg-left"
+              id="start-time"
+              htmlFor="id_start_time"
+            >
+              Event time
+              <Input
+                required=""
+                id="id_start_time"
+                className="jQtimePicker"
+                name="start_time"
+                type="time"
+              />
+            </label>
+          </Details>
+          <TicketTypeLabel>
+            {' '}
+            <Icon src={Ticket} alt="ticket" /> Create Ticket
+          </TicketTypeLabel>
 
-      <p className="tcs">
-        By clicking "Create" you're agreeing to
-        <a href="/en/tandc/#tandc-organiser" target="_blank">
-          the T&amp;C's
-        </a>.
-      </p>
-      <button className="createEventButton">Create event</button>
-    </form>
-  </Section>
-)
-{
-  let span = document.getElementById('span')
-  let wrapper = document.getElementById('wrapper')
-}
-function addTicket() {
-  tickets.push(NewTicket)
-  console.log(tickets)
+          <div
+            id="wrapper"
+            className="ticket-types"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
+            }}
+          >
+            {this.state.tickets.map((t, i) => (
+              <NewTicket
+                ticket={t}
+                index={i}
+                onRemove={index => {
+                  this.setState(({ tickets }) => ({
+                    tickets: tickets.filter((_, index) => index !== i),
+                  }))
+                }}
+              />
+            ))}
+
+            <TicketBox>
+              <a
+                className="add-row"
+                href="javascript:void(0)"
+                onClick={() => {
+                  this.setState({ tickets: [...this.state.tickets, {}] })
+                  console.log('del')
+                }}
+              >
+                <p>Add new ticket type</p>
+                <img className="addButton" src={AddButton} alt="add-button" />
+              </a>
+            </TicketBox>
+          </div>
+
+          <p className="tcs">
+            By clicking "Create" you're agreeing to
+            <a href="/en/tandc/#tandc-organiser" target="_blank">
+              the T&amp;C's
+            </a>.
+          </p>
+          <button className="createEventButton">Create event</button>
+        </form>
+      </Section>
+    )
+  }
 }
 
 export default CreateEvent

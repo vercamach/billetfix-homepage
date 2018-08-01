@@ -56,7 +56,7 @@ const Input = styled.input`
   letter-letterspacing: 1px;
 `
 
-const NewTicket = ({}) => (
+const NewTicket = ({ ticket, i, onRemove }) => (
   <div>
     <TicketBox className="tickets">
       <div className="ticket dynamic-form row1">
@@ -97,9 +97,10 @@ const NewTicket = ({}) => (
           />
         </TicketTypeLabel>
         <a
+          id="delete-ticket"
           className="delete-row"
           href="javascript:void(0)"
-          onClick={removeTicket}
+          onClick={() => onRemove(i)}
         >
           <DeleteIcon className="trash" src={Trash} alt="trash" />
         </a>
@@ -107,6 +108,11 @@ const NewTicket = ({}) => (
     </TicketBox>
   </div>
 )
-function removeTicket() {}
+
+function deleteTick(e) {
+  {
+    console.log(e.target)
+  }
+}
 
 export default NewTicket
