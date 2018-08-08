@@ -1,6 +1,6 @@
-import Features1 from '../img/features1.png'
-import Features2 from '../img/features2.png'
-import Features3 from '../img/features3.png'
+import Features1 from '../img/feature1.svg'
+import Features2 from '../img/feature2.svg'
+import Features3 from '../img/feature3.svg'
 export default [
   {
     imgSrc: Features1,

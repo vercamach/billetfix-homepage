@@ -37,3 +37,8 @@ a:hover {
 .scroll-header a:hover {
     color: #ff4a6e !important;
 }
+svg{
+ fill: #ff4a6e;
+    display: inline-block;
+    vertical-align: middle;
+}

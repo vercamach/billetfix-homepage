@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Hero />
 
     <Partners />
-    <SecondRight />
+
     <PictureRight />
     <Features />
     <PictureLeft />

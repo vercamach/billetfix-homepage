@@ -1,96 +1,151 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import FBIcon from '../img/fb-icon.png'
+import FBIcon from '../img/fb-icon.svg'
 
-const FooterSection = styled.footer`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-  background-color: #f7f7f7;
-  width: 100%;
-
-  > ul {
-    list-style-type: none;
-    text-align: left;
-    margin: 0;
-    padding: 25px;
-    min-width: 300px;
-  }
-  > ul:nth-child(2) li {
-    font-weight: 700;
-    font-size: 14px;
-    text-align: center;
-    line-height: 1.8em;
-    letter-spacing: 1px;
-  }
-  > ul.right-column {
-    text-align: right;
-  }
-  li,
-  a.ticketbutler-link,
-  span {
-    font-weight: 100;
-    line-height: 20px;
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
-  a {
-    color: #ff4a6e;
-    text-decoration: none;
-  }
-  img {
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 5px;
-  }
-`
+import FooterData from '../__mocks__/footer'
 
 const Footer = ({}) => (
   <div>
-    <FooterSection>
-      <ul className="left-column">
-        <li> Ticketing delivered by:</li>
-        <a
-          className="ticketbutler-link"
-          href="https://ticketbutler.io"
-          target="_blank"
+    <footer
+      style={{
+        display: 'flex',
+        flexFlow: 'row wrap',
+        textAlign: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: ' #f7f7f7',
+        width: '100%',
+      }}
+    >
+      {FooterData.filter(({ type }) => type === 'leftSection').map(data => (
+        <div
+          style={{
+            fontWeight: '100',
+            lineHeight: '20px',
+            fontSize: '13px',
+            letterSpacing: '1px',
+            textAlign: 'left',
+            padding: '25px',
+            minWidth: '300px',
+            margin: '0',
+          }}
         >
-          Ticketbutler
-        </a>
-        <span> (CVR: 38404687)</span>
-      </ul>
-      <ul className="middle-column">
-        <li>
-          <Link to="//">Home</Link>
-        </li>
-        <li>
-          <Link to="/contact/">Contact</Link>
-        </li>
-        <li>
-          <Link to="/privacy-policy/">Privacy Policy</Link>
-        </li>
-        <li>
-          <Link to="//">Terms & Conditions</Link>
-        </li>
-        <li>
-          <img src={FBIcon} alt="fb-icon" />
-          <a href="https://www.facebook.com/BilletFix/"> Find us on Facebook</a>
-        </li>
-      </ul>
-      <ul className="right-column">
-        <li>BilletFix IVS</li>
-        <li>CVR: 37073911</li>
-        <li>Porcelænshaven 26 1.</li>
-        <li>Frederiksberg 2000</li>
-        <li>89 80 12 80</li>
-        <li>
-          <a href="mailto:info@billetfix.dk">info@billetfix.dk</a>
-        </li>
-      </ul>
-    </FooterSection>
+          <p style={{ margin: '0' }}> {data.line1}</p>
+          <a
+            style={{ color: '#ff4a6e', textDecoration: 'none' }}
+            href={data.linkTicketbutler}
+            target="_blank"
+          >
+            {data.linkText}
+          </a>
+          <span> {data.cvr}</span>
+        </div>
+      ))}
+
+      <div
+        style={{
+          fontWeight: '700',
+          fontSize: '14px',
+          textAlign: 'center',
+          lineHeight: '1.8em',
+          letterSpacing: '1px',
+        }}
+      >
+        <ul
+          style={{
+            listStyleType: 'none',
+            listStyleType: 'none',
+            margin: '0',
+            padding: '25px',
+            minWidth: '300px',
+          }}
+          className="middle-column"
+        >
+          {FooterData.filter(({ type }) => type === 'centerSection').map(
+            data => (
+              <li>
+                <a
+                  style={{
+                    color: '#ff4a6e',
+                    textDecoration: 'none',
+                  }}
+                  href={data.link}
+                >
+                  {data.text}
+                </a>
+              </li>
+            )
+          )}
+          {FooterData.filter(({ type }) => type === 'icon').map(data => (
+            <li>
+              <img
+                style={{
+                  height: '24px',
+                  width: '24px',
+                  display: 'inline-block',
+                  verticalAlign: 'middle',
+                  margin: '0 5px',
+                }}
+                src={data.src}
+                alt={data.alt}
+              />
+              <a
+                style={{
+                  color: '#ff4a6e',
+                  textDecoration: 'none',
+                }}
+                href={data.link}
+              >
+                {data.linkText}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div
+        style={{
+          textAlign: 'right',
+          listStyleType: 'none',
+          margin: '0',
+          padding: '25px',
+          minWidth: '300px',
+        }}
+        className="right-column"
+      >
+        {FooterData.filter(({ type }) => type === 'rightSection').map(data => (
+          <p
+            style={{
+              margin: '0',
+              fontWeight: '100',
+              lineHeight: '20px',
+              fontSize: '13px',
+              letterSpacing: '1px',
+            }}
+          >
+            {data.text}
+          </p>
+        ))}
+
+        {FooterData.filter(({ type }) => type === 'rightSectionMail').map(
+          data => (
+            <p
+              style={{
+                margin: '0',
+                fontWeight: '100',
+                lineHeight: '20px',
+                fontSize: '13px',
+                letterSpacing: '1px',
+              }}
+            >
+              <a style={{ color: '#ff4a6e' }} href={data.href}>
+                {data.text}
+              </a>
+            </p>
+          )
+        )}
+      </div>
+    </footer>
   </div>
 )
 

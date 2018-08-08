@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Features1 from '../img/features1.png'
-import Features2 from '../img/features2.png'
-import Features3 from '../img/features3.png'
 import { WindowHelper } from '../components/helpers'
 
 import FeaturesData from '../__mocks__/features'
