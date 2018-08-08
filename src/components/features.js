@@ -36,7 +36,7 @@ const Features = () => {
             >
               <img
                 src={feature.imgSrc}
-                style={{ width: '30%' }}
+                style={{ width: '7.5em' }}
                 alt="features1"
               />
 

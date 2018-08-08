@@ -8,6 +8,7 @@ const pictureLeft = () => (
       flexDirection: 'row-reverse',
       alignItems: 'center',
       boxPack: 'justify',
+      justifyContent: 'space-between',
       padding: '112px 83px',
       background: '#f7f7f7',
     }}
@@ -19,6 +20,7 @@ const pictureLeft = () => (
           fontSize: '30px',
           lineHeight: '40px',
           margin: '.25em 0',
+          textAlign: 'right',
           fontWeight: '100',
           letterSpacing: '2px',
         }}
@@ -50,15 +52,23 @@ const pictureLeft = () => (
         bank account.
       </p>
     </div>
-
-    <img
+    <div
       style={{
-        width: '19%',
-        marginRight: '137px',
+        display: 'flex',
+        flexFlow: 'row wrap ',
+        minWidth: '33%',
       }}
-      src={PaymentIcon}
-      alt="payment icon"
-    />
+    >
+      {' '}
+      <img
+        src="https://placeimg.com/240/240/animals"
+        style={{
+          width: 'auto',
+          height: '90px',
+          paddingRight: '40px',
+        }}
+      />
+    </div>
   </section>
 )
 

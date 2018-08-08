@@ -3,13 +3,13 @@ import React from 'react'
 export default [
   {
     type: 'gatsbyLink',
-    link: 'about/',
+    link: '/about/',
     caption: '    About',
   },
 
   {
     type: 'gatsbyLink',
-    link: 'faq/',
+    link: '/faq/',
     caption: 'FAQ',
   },
   {
@@ -19,12 +19,12 @@ export default [
   },
   {
     type: 'gatsbyLink',
-    link: 'my-tickets/',
+    link: '/my-tickets/',
     caption: 'My tickets',
   },
   {
     type: 'gatsbyLink',
-    link: 'login/',
+    link: '/login/',
     caption: 'Login',
   },
 ]

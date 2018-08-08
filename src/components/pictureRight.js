@@ -32,7 +32,7 @@ const Teaser = () => (
           fontWeight: '100',
         }}
       >
-        Are you organizing an event for your fellow students?
+        Custom information about the attendee
       </h3>
       <p
         style={{
@@ -44,8 +44,7 @@ const Teaser = () => (
           fontWeight: '100',
         }}
       >
-        Regardsless if it's to the christmas lunch, intro trip or end of
-        semester party, we have made it easy for students.
+        Do you want to know something during signup?
       </p>
       <p
         style={{
@@ -57,18 +56,18 @@ const Teaser = () => (
           fontWeight: '100',
         }}
       >
-        Forget about complicated spreadsheets and time consuming sale in the
-        breaks. Just do it online - for free!
+        Get all the information you would like with custom fields. What field of
+        study? What year are you on? Is it the first time you attend? Just
+        contact us here for help!
       </p>
     </div>
     <div className="icon">
       <img
+        src="https://placeimg.com/240/240/animals"
         style={{
           height: '200px',
           marginRight: '240px',
         }}
-        src={IconTeaser}
-        alt="iconTeaser"
       />
     </div>
   </section>

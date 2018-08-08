@@ -1,7 +1,7 @@
 import React from 'react'
 import { WindowHelper } from '../components/helpers'
 import faqs from '../__mocks__/faq'
-
+import { Layout } from '../layouts/index'
 const styles = {
   caption: {
     fontSize: '30px',
@@ -15,158 +15,160 @@ const styles = {
 
 const faq = () => {
   return (
-    <WindowHelper>
-      {window => (
-        <section
-          style={{
-            overflow: 'hidden',
-            padding: '125px 6%',
-          }}
-        >
-          <div
+    <Layout>
+      <WindowHelper>
+        {window => (
+          <section
             style={{
-              maxWidth: '671px',
-              margin: '0 auto',
+              overflow: 'hidden',
+              padding: '125px 6%',
             }}
           >
-            <h1
+            <div
               style={{
-                textAlign: 'center',
-                fontWeight: 300,
-                letterSpacing: '1px',
-                textTransform: 'uppercase',
-                marginBottom: '36px',
-
-                marginTop: '32px',
-
-                ...(window.width > 460
-                  ? {
-                      fontSize: '50px',
-                    }
-                  : {
-                      fontSize: '1em',
-                    }),
+                maxWidth: '671px',
+                margin: '0 auto',
               }}
             >
-              FAQ
-            </h1>
-            <h3 style={styles.caption}>Organizer</h3>
-            <ul
-              style={{
-                margin: '0',
-              }}
-            >
-              {faqs.filter(({ type }) => type === 'organiser').map(faq => (
-                <li>
-                  <a
-                    href={'#' + faq.id}
-                    style={{
-                      color: '#ff4a6e',
-                      textDecoration: 'none',
-                      letterSpacing: '1px',
-                      fontWeight: '100',
-                      fontSize: '15px',
-                    }}
-                  >
-                    {faq.question}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <h3 style={styles.caption}>Guest</h3>
-            <ul style={{ margin: '0' }}>
-              {faqs.filter(({ type }) => type === 'guest').map(faq => {
-                if (window.width > 400) {
-                  return (
-                    <li>
-                      <a
-                        style={{
-                          ...(window.width > 400
-                            ? {
-                                color: '#ff4a6e',
-                                textDecoration: 'none',
-                                letterSpacing: '1px',
-                                lineHeight: '22px',
-                                fontWeight: '100',
-                                fontSize: '15px',
-                              }
-                            : { color: 'green' }),
-                        }}
-                      >
-                        {faq.question}
-                      </a>
-                    </li>
-                  )
-                } else {
-                  return <span>This is the other markup</span>
-                }
-              })}
-            </ul>
-            <h3 style={styles.caption}>Organizer</h3>
-            <ul>
-              {faqs.filter(({ type }) => type === 'organiser').map(faq => (
-                <li>
-                  <h4
-                    id={faq.id}
-                    style={{
-                      fontSize: '18px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '1px',
-                      fontWeight: '100',
-                      lineHeight: '1.4em',
-                      marginTop: '25px',
-                    }}
-                  >
-                    {faq.question}
-                  </h4>
-                  <p
-                    style={{
-                      fontWeight: '100',
-                      fontSize: '15px',
-                      lineHeight: '22px',
-                      letterSpacing: '1px',
-                    }}
-                  >
-                    {faq.answer}
-                  </p>
-                </li>
-              ))}
-            </ul>
-            <h3 style={styles.caption}> Guest</h3>
+              <h1
+                style={{
+                  textAlign: 'center',
+                  fontWeight: 300,
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  marginBottom: '36px',
 
-            <ul>
-              {faqs.filter(({ type }) => type === 'guest').map(faq => (
-                <li>
-                  <h4
-                    id={faq.id}
-                    style={{
-                      fontSize: '18px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '1px',
-                      fontWeight: '100',
-                      lineHeight: '1.4em',
-                      marginTop: '25px',
-                    }}
-                  >
-                    {faq.question}
-                  </h4>
-                  <p
-                    style={{
-                      fontWeight: '100',
-                      fontSize: '15px',
-                      lineHeight: '22px',
-                      letterSpacing: '1px',
-                    }}
-                  >
-                    {faq.answer}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-    </WindowHelper>
+                  marginTop: '32px',
+
+                  ...(window.width > 460
+                    ? {
+                        fontSize: '50px',
+                      }
+                    : {
+                        fontSize: '1em',
+                      }),
+                }}
+              >
+                FAQ
+              </h1>
+              <h3 style={styles.caption}>Organizer</h3>
+              <ul
+                style={{
+                  margin: '0',
+                }}
+              >
+                {faqs.filter(({ type }) => type === 'organiser').map(faq => (
+                  <li>
+                    <a
+                      href={'#' + faq.id}
+                      style={{
+                        color: '#ff4a6e',
+                        textDecoration: 'none',
+                        letterSpacing: '1px',
+                        fontWeight: '100',
+                        fontSize: '15px',
+                      }}
+                    >
+                      {faq.question}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <h3 style={styles.caption}>Guest</h3>
+              <ul style={{ margin: '0' }}>
+                {faqs.filter(({ type }) => type === 'guest').map(faq => {
+                  if (window.width > 400) {
+                    return (
+                      <li>
+                        <a
+                          style={{
+                            ...(window.width > 400
+                              ? {
+                                  color: '#ff4a6e',
+                                  textDecoration: 'none',
+                                  letterSpacing: '1px',
+                                  lineHeight: '22px',
+                                  fontWeight: '100',
+                                  fontSize: '15px',
+                                }
+                              : { color: 'green' }),
+                          }}
+                        >
+                          {faq.question}
+                        </a>
+                      </li>
+                    )
+                  } else {
+                    return <span>This is the other markup</span>
+                  }
+                })}
+              </ul>
+              <h3 style={styles.caption}>Organizer</h3>
+              <ul>
+                {faqs.filter(({ type }) => type === 'organiser').map(faq => (
+                  <li>
+                    <h4
+                      id={faq.id}
+                      style={{
+                        fontSize: '18px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                        fontWeight: '100',
+                        lineHeight: '1.4em',
+                        marginTop: '25px',
+                      }}
+                    >
+                      {faq.question}
+                    </h4>
+                    <p
+                      style={{
+                        fontWeight: '100',
+                        fontSize: '15px',
+                        lineHeight: '22px',
+                        letterSpacing: '1px',
+                      }}
+                    >
+                      {faq.answer}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <h3 style={styles.caption}> Guest</h3>
+
+              <ul>
+                {faqs.filter(({ type }) => type === 'guest').map(faq => (
+                  <li>
+                    <h4
+                      id={faq.id}
+                      style={{
+                        fontSize: '18px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                        fontWeight: '100',
+                        lineHeight: '1.4em',
+                        marginTop: '25px',
+                      }}
+                    >
+                      {faq.question}
+                    </h4>
+                    <p
+                      style={{
+                        fontWeight: '100',
+                        fontSize: '15px',
+                        lineHeight: '22px',
+                        letterSpacing: '1px',
+                      }}
+                    >
+                      {faq.answer}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+      </WindowHelper>
+    </Layout>
   )
 }
 
