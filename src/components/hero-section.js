@@ -3,7 +3,6 @@ import { WindowHelper } from '../components/helpers'
 import Img from '../img/lights.jpg'
 
 const spanText = [
-  "It's never been easier to manage events",
   'Free to use for the organizer',
   'Ultra low fees',
   'Ready to receive payments in seconds',
@@ -19,14 +18,20 @@ const Hero = () => (
           display: 'flex',
           textAlign: 'center',
           paddingBottom: '2%',
-          paddingTop: '62px',
           backgroungImage: 'Img',
           justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
-          minHeight: '600px',
           background: 'Img',
           backgroundSize: 'cover',
+          ...(window.width > 980
+            ? {
+                minHeight: '600px',
+                paddingTop: '6%',
+              }
+            : {
+                paddingTop: '7%',
+              }),
         }}
       >
         <div>
@@ -39,20 +44,41 @@ const Hero = () => (
                 position: 'absolute',
                 top: '0',
                 left: '0',
-                minWidth: '100vw',
-                minHeight: '100vh',
+                objectFit: 'cover',
+                width: '100vw',
+                height: '100vh',
                 filter: 'brightness(40%) contrast(70%)',
               }}
             />
 
             <h1
               style={{
-                fontWeight: '700',
                 color: '#ff4a6e',
                 textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
                 fontSize: '43px',
                 lineHeight: '72px',
-                letterSpacing: '5px',
+
+                ...(window.width > 980
+                  ? {
+                      fontWeight: '700',
+                      fontSize: '43px',
+                      lineHeight: '72px',
+                      letterSpacing: '5px',
+                    }
+                  : window.width > 600
+                    ? {
+                        fontWeight: '500',
+                        fontSize: '25px',
+                        lineHeight: '30px',
+                        letterSpacing: '3px',
+                      }
+                    : {
+                        marginTop: '100px',
+                        fontSize: '26px',
+                        letterSpacing: '2px',
+                        lineHeight: '40px',
+                        fontWeight: '400',
+                      }),
               }}
             >
               It's never been easier to manage events
@@ -64,10 +90,23 @@ const Hero = () => (
                   color: 'white',
                   display: 'block',
                   margin: '17.6px 0',
-                  fontSize: '20px',
-                  lineHeight: '39px',
+
                   fontWeight: '100',
                   letterSpacing: '2px',
+                  ...(window.width > 980
+                    ? {
+                        fontSize: '20px',
+                        lineHeight: '39px',
+                      }
+                    : window.width > 600
+                      ? {
+                          fontSize: '15px',
+                          lineHeight: '33px',
+                        }
+                      : {
+                          fontSize: '14px',
+                          lineHeight: '19px',
+                        }),
                 }}
               >
                 {span}
@@ -92,6 +131,11 @@ const Hero = () => (
                   height: '56px',
                   border: '.5px solid #ff4a6e',
                   borderRadius: '3px',
+                  ...(window.width < 660
+                    ? {
+                        display: 'none',
+                      }
+                    : {}),
                 }}
                 id="event-title"
                 type="text"
@@ -143,6 +187,12 @@ const Hero = () => (
                 textDecoration: 'none',
                 letterSpacing: '2px',
                 fontWeight: '100',
+
+                ...(window.width < 660
+                  ? {
+                      display: 'none',
+                    }
+                  : {}),
               }}
               href="features"
             >

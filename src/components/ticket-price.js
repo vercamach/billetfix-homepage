@@ -8,13 +8,18 @@ const TicketPrice = () => (
       <section style={{ padding: '7em 0' }}>
         <h3
           style={{
-            fontSize: '30px',
             letterSpacing: '3px',
             paddingBottom: '15px',
             textAlign: 'center',
             margin: '0.25em 0px',
             color: 'rgb(255, 74, 110)',
             fontWeight: '100',
+
+            ...(window.width > 980
+              ? { fontSize: '30px' }
+              : {
+                  fontSize: '23px',
+                }),
           }}
         >
           The cheapest signup system in the market!

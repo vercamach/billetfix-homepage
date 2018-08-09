@@ -10,7 +10,7 @@ export default [
   },
   {
     type: 'centerSection',
-    link: '/index-page/',
+    link: '/',
     text: 'Home',
   },
   {

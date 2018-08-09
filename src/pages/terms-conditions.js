@@ -2,7 +2,7 @@ import React from 'react'
 import { WindowHelper } from '../components/helpers'
 import { Layout } from '../layouts/index'
 
-import mock from '../__mocks__/privacy-policy'
+import mock from '../__mocks__/terms-conditions'
 
 const PrivacyPolicy = () => {
   return (

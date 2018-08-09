@@ -7,62 +7,47 @@ import Ticket from '../img/ticket.png'
 import Trash from '../img/trash.png'
 import AddButton from '../img/plus-button.png'
 
-const Icon = styled.img`
-  height: 35px;
-  width: auto;
-
-  margin: 0 5px;
-`
-const NewTicketWrapper = styled.div`
-  display: flex;
-`
-const TicketBox = styled.div`
-  border: 1px solid #ff4a6e;
-  border-radius: 3px;
-  margin: 0 20px 20px 0;
-  padding: 20px;
-  width: 342px;
-  height: 368px;
-  overflow: hidden;
-  display: flex;
-  > a img {
-    width: 50px;
-    height: auto;
-  }
-`
-const DeleteIcon = styled.img`
-  height: 30px;
-  width: auto;
-  float: right;
-`
-
-const TicketTypeLabel = styled.label`
-  display: block;
-  font-size: 1.2em;
-  vertical-align: bottom;
-  margin: 20px 0;
-  position: relative;
-  font-weight: 100;
-`
-const Input = styled.input`
-  display: block;
-  margin: 10px 0;
-  width: 300px;
-  font-size: medium;
-  padding: 11px 10px;
-  font-weight: 100;
-  border: 1px solid rgba(255, 74, 110, 0.5);
-  border-radius: 3px;
-  letter-letterspacing: 1px;
-`
+let styles = {
+  label: {
+    display: 'block',
+    fontSize: '1.2em',
+    verticalAlign: 'bottom',
+    margin: '20px 0',
+    position: 'relative',
+    fontWeight: '100',
+  },
+  input: {
+    display: 'block',
+    margin: '10px 0',
+    width: '300px',
+    fontSize: 'medium',
+    padding: '11px 10px',
+    fontWeight: '100',
+    border: '1px solid rgba(255, 74, 110, 0.5)',
+    borderRadius: '3px',
+    letterLetterspacing: '1px',
+  },
+}
 
 const NewTicket = ({ ticket, i, onRemove }) => (
-  <div>
-    <TicketBox className="tickets">
+  <div
+    style={{
+      border: ' 1px solid #ff4a6e',
+      borderRadius: '3px',
+      margin: '0 20px 20px 0',
+      padding: '20px',
+      width: '342px',
+      height: '368px',
+      overflow: 'hidden',
+      display: 'flex',
+    }}
+  >
+    <div className="tickets">
       <div className="ticket dynamic-form row1">
-        <TicketTypeLabel className="type-label">
+        <label style={styles.label} className="type-label">
           Ticket Name
-          <Input
+          <input
+            style={styles.input}
             required=""
             type="text"
             id="id_form-0-title"
@@ -70,11 +55,12 @@ const NewTicket = ({ ticket, i, onRemove }) => (
             placeholder="Entry / Standing / Gold / VIP"
             maxlength="32"
           />
-        </TicketTypeLabel>
+        </label>
 
-        <TicketTypeLabel className="type-label" htmlFor="id_price">
+        <label style={styles.label} className="type-label" htmlFor="id_price">
           Price
-          <Input
+          <input
+            style={styles.input}
             required=""
             type="number"
             id="id_price"
@@ -83,11 +69,12 @@ const NewTicket = ({ ticket, i, onRemove }) => (
             placeholder="kr - or '0' for FREE"
             step="1"
           />
-        </TicketTypeLabel>
+        </label>
 
-        <TicketTypeLabel className="type-label" htmlFor="id_amount">
+        <label style={styles.label} className="type-label" htmlFor="id_amount">
           Number of tickets
-          <Input
+          <input
+            style={styles.input}
             required=""
             type="number"
             min="1"
@@ -95,17 +82,26 @@ const NewTicket = ({ ticket, i, onRemove }) => (
             name="form-0-amount"
             placeholder="Pcs"
           />
-        </TicketTypeLabel>
+        </label>
         <a
           id="delete-ticket"
           className="delete-row"
           href="javascript:void(0)"
           onClick={() => onRemove(i)}
         >
-          <DeleteIcon className="trash" src={Trash} alt="trash" />
+          <img
+            style={{
+              height: ' 30px',
+              width: 'auto',
+              float: 'right',
+            }}
+            className="trash"
+            src={Trash}
+            alt="trash"
+          />
         </a>
       </div>
-    </TicketBox>
+    </div>
   </div>
 )
 

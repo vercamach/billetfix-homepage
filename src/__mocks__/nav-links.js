@@ -4,7 +4,7 @@ export default [
   {
     type: 'gatsbyLink',
     link: '/about/',
-    caption: '    About',
+    caption: 'About',
   },
 
   {

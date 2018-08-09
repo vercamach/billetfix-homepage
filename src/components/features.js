@@ -11,24 +11,36 @@ const Features = () => {
         <section
           id="features"
           style={{
-            display: 'grid',
+            flexFlow: 'row nowrap',
+            justyfy: 'space-between',
+            alignItems: 'flex-start',
             textAlign: 'center',
             padding: '100px 2vw',
 
             ...(window.width > 980
               ? {
-                  gridTemplateColumns: '1fr 1fr 1fr',
+                  display: 'flex',
                 }
               : {
-                  gridTemplateColumns: '1fr',
+                  display: 'block',
                 }),
           }}
         >
           {FeaturesData.map(feature => (
             <div
               style={{
-                margin: '10px auto',
-                padding: '0 2vw',
+                margin: '0 auto',
+                padding: '0 1vw',
+
+                ...(window.width > 980
+                  ? {
+                      maxWidth: '30%',
+                      padding: '0 1vw',
+                    }
+                  : {
+                      maxWidth: '100%',
+                      padding: '20px 2%',
+                    }),
               }}
             >
               <img
@@ -40,11 +52,20 @@ const Features = () => {
               <h4
                 style={{
                   textTransform: 'uppercase',
-                  fontSize: '21px',
-                  lineHeight: '38px',
+
                   fontWeight: '500',
                   letterSpacing: '2px',
                   marginTop: '19px',
+
+                  ...(window.width > 980
+                    ? {
+                        fontSize: '21px',
+                        lineHeight: '38px',
+                      }
+                    : {
+                        fontSize: '20px',
+                        lineHeight: '28px',
+                      }),
                 }}
               >
                 {feature.title}
@@ -58,9 +79,8 @@ const Features = () => {
                   textAlign: 'justify',
                   margin: '10px',
                 }}
-              >
-                {feature.text}
-              </p>
+                dangerouslySetInnerHTML={{ __html: feature.text }}
+              />
             </div>
           ))}
         </section>

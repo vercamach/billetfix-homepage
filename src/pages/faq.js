@@ -33,7 +33,7 @@ const faq = () => {
               <h1
                 style={{
                   textAlign: 'center',
-                  fontWeight: 300,
+                  fontWeight: '300',
                   letterSpacing: '1px',
                   textTransform: 'uppercase',
                   marginBottom: '36px',

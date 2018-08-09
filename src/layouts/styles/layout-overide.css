@@ -42,3 +42,8 @@ svg{
     display: inline-block;
     vertical-align: middle;
 }
+.menuVisible{
+right: 250px;
+    transform: translateX(0);
+
+}
