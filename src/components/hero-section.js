@@ -1,7 +1,7 @@
 import React from 'react'
 import { WindowHelper } from '../components/helpers'
 import Img from '../img/lights.jpg'
-
+import { Button } from '../components/elements/elements'
 const spanText = [
   'Free to use for the organizer',
   'Ultra low fees',
@@ -9,7 +9,7 @@ const spanText = [
   'Integrate for free on your website',
 ]
 
-const Hero = () => (
+const Hero = ({}) => (
   <WindowHelper>
     {window => (
       <section
@@ -141,43 +141,19 @@ const Hero = () => (
                 type="text"
                 placeholder="Your event title goes here..."
               />
-              <button
-                id="start"
-                className="cta"
-                style={{
-                  background: '#ff4a6e',
-                  color: '#fff',
-                  letterSpacing: '3px',
-                  padding: '16px 17px',
-                  margin: '0',
-                  borderTopLeftRadius: '0',
-                  borderBottomLeftRadius: '0',
-                  fontSize: '15px',
-                  border: '1px solid #ff4a6e',
-                }}
-              >
-                start selling
-              </button>
+
+              <Button>start selling </Button>
             </div>
             <div>
-              <button
+              <Button
                 style={{
-                  background: '#ff4a6e',
-                  color: '#fff',
-                  letterSpacing: '3px',
                   padding: '15px 10px',
                   marginTop: '60px',
                   marginBottom: '40px',
-                  borderTopLeftRadius: '0',
-                  borderBottomLeftRadius: '0',
-                  fontSize: '15px',
-                  border: '1px solid #ff4a6e',
                 }}
-                className="cta"
-                id="see_video"
               >
                 see video
-              </button>
+              </Button>
             </div>
 
             <a

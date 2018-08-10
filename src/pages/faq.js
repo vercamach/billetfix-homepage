@@ -21,7 +21,14 @@ const faq = () => {
           <section
             style={{
               overflow: 'hidden',
-              padding: '125px 6%',
+
+              ...(window.widt > 980
+                ? {
+                    padding: '125px 6%',
+                  }
+                : {
+                    padding: '80px 6%',
+                  }),
             }}
           >
             <div
@@ -42,10 +49,10 @@ const faq = () => {
 
                   ...(window.width > 460
                     ? {
-                        fontSize: '50px',
+                        fontSize: '45px',
                       }
                     : {
-                        fontSize: '1em',
+                        fontSize: '28px',
                       }),
                 }}
               >

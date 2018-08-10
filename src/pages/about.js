@@ -12,10 +12,17 @@ const About = () => {
           <div>
             <section
               style={{
-                padding: ' 125px 6%',
                 overflow: 'hidden',
                 background: '#fff',
                 color: '#333',
+
+                ...(window.widt > 980
+                  ? {
+                      padding: '125px 6%',
+                    }
+                  : {
+                      padding: '80px 6%',
+                    }),
               }}
             >
               <div
@@ -28,9 +35,16 @@ const About = () => {
                   style={{
                     textAlign: 'center',
                     fontWeight: '300',
-                    fontSize: '45px',
+
                     letterSpacing: '2px',
                     display: 'block',
+                    ...(window.width > 980
+                      ? {
+                          fontSize: '45px',
+                        }
+                      : {
+                          fontSize: '28px',
+                        }),
                   }}
                 >
                   About

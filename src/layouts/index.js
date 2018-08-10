@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import { Button } from '../components/elements/elements'
 
 import Footer from '../components/footer'
 import './index.css'
@@ -31,7 +32,6 @@ export const Layout = ({ children, data, staticHeader = true }) => (
               !staticHeader && window.scrollY <= 10 ? '' : 'scroll-header'
             }
             style={{
-              padding: '15px 5%',
               top: '0',
               width: '100%',
               display: 'flex',
@@ -39,6 +39,13 @@ export const Layout = ({ children, data, staticHeader = true }) => (
               justifyContent: 'space-between',
               zIndex: '999',
               transition: 'all 0.5s',
+              ...(window.width > 450
+                ? {
+                    padding: '15px 5%',
+                  }
+                : {
+                    padding: '5px 5%',
+                  }),
             }}
           >
             <a href="/">
@@ -67,7 +74,7 @@ export const Layout = ({ children, data, staticHeader = true }) => (
                       position: 'absolute',
                       textAlign: 'center',
                       top: '65px',
-                      right: '-140',
+                      right: '-140px',
                       width: '80%',
                       maxWidth: '250px',
                       alignItems: 'baseline',
@@ -88,25 +95,20 @@ export const Layout = ({ children, data, staticHeader = true }) => (
                 }}
                 href="/create-event"
               >
-                <button
+                <Button
                   style={{
                     margin: '-11px auto',
                     padding: '8px 13px',
-                    background: '#ff4a6e',
-                    color: '#fff',
-                    letterSpacing: '2px',
+
                     borderRadius: '2px',
                     cursor: 'pointer',
                     fontSize: '13px',
                     textAlign: 'center',
                     fontWeight: '400',
-                    border: '1px solid #ff4a6e',
-                    transition: 'all .15s',
                   }}
-                  className="createEventButton"
                 >
                   create event
-                </button>
+                </Button>
               </a>
 
               {LinksData.map(
@@ -176,16 +178,26 @@ export const Layout = ({ children, data, staticHeader = true }) => (
                 borderRadius: '4px',
                 padding: '5px 10px',
                 cursor: 'pointer',
+                position: 'fixed',
+                right: '15px',
                 ...(window.width > 980
                   ? {
+                      marginTop: '6px',
                       display: 'none',
                     }
-                  : {
-                      display: 'block',
-                    }),
+                  : window.width > 450
+                    ? {
+                        marginTop: '6px',
+                      }
+                    : {
+                        marginTop: '5px',
+                        display: 'block',
+                      }),
               }}
               onClick={() => {
-                document.getElementById('navDiv').style.right = '250px'
+                document
+                  .getElementById('navDiv')
+                  .classList.toggle('menuVisible')
               }}
             >
               <div style={styles.hamburger} />

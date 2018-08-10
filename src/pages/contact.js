@@ -18,9 +18,16 @@ const Contact = () => (
             <h1
               style={{
                 fontWeight: '200',
-                fontSize: '3em',
+
                 lineHeight: '1.5em',
-                letterSpacing: '2px',
+                letterSpacing: '3px',
+                ...(window.width > 980
+                  ? {
+                      fontSize: '50px',
+                    }
+                  : {
+                      fontSize: '28px',
+                    }),
               }}
             >
               Contact

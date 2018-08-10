@@ -1,6 +1,7 @@
 import React from 'react'
-
-import Smiley from '../img/smiley.png'
+import DateTimePicker from 'date-time-picker-react'
+import { Smiley } from '../components/icons/smileyIcon'
+import { CalendarIcon } from '../components/icons/calendarIcon'
 import Calendar from '../img/calendar.png'
 import Ticket from '../img/ticket.png'
 import Trash from '../img/trash.png'
@@ -8,6 +9,8 @@ import AddButton from '../img/plus-button.png'
 import NewTicket from '../components/ticket.js'
 import { Layout } from '../layouts/index'
 import { WindowHelper } from '../components/helpers'
+import { Button } from '../components/elements/elements'
+import { TicketIcon } from '../components/icons/ticketIcon'
 
 class CreateEvent extends React.Component {
   constructor(props) {
@@ -53,17 +56,8 @@ class CreateEvent extends React.Component {
                       fontWeight: '100',
                       letterSpacing: '1px',
                     }}
-                    htmlFor="id_event_title"
                   >
-                    <img
-                      style={{
-                        height: '35px',
-                        width: 'auto',
-                        margin: ' 0 5px',
-                      }}
-                      src={Smiley}
-                      alt="smiley"
-                    />
+                    <Smiley />
                     Event Title
                     <input
                       style={{
@@ -71,7 +65,7 @@ class CreateEvent extends React.Component {
                         margin: '10px 0',
                         width: '300px',
                         fontSize: 'medium',
-                        padding: ' 11px 10px',
+                        padding: '11px 10px',
                         fontWeight: '100',
                         border: ' 1px solid rgba(255, 74, 110, 0.5)',
                         borderRadius: '3px',
@@ -80,91 +74,51 @@ class CreateEvent extends React.Component {
                       required=""
                       id="id_event_title"
                       type="text"
-                      maxlength="128"
+                      maxLength="128"
                       name="title"
                       placeholder="Go on..."
                       htmlFor="id_title"
-                      value=""
-                      className=""
                     />
                   </label>
                   <label
                     style={{
                       minWidth: '300px',
-
                       marginRight: '40px',
-                      marginLeft: '30px',
                       display: 'block',
                       fontSize: '1.2em',
                       verticalAlign: 'bottom',
                       marginMarginBottom: '15px',
+
                       fontWeight: '100',
                       letterSpacing: '1px',
+                      ...(window.width > 980
+                        ? {
+                            marginLeft: '30px',
+                          }
+                        : {
+                            marginLeft: '0',
+                            marginTop: '15px',
+                          }),
                     }}
                     className="marg-left"
                     htmlFor="id_start_date"
                   >
-                    <img
-                      style={{
-                        height: '35px',
-                        width: 'auto',
-                        margin: '0 5px',
-                      }}
-                      src={Calendar}
-                      alt="calendar"
-                    />
+                    <CalendarIcon />
                     Event date
-                    <input
-                      style={{
-                        display: 'block',
+                    <DateTimePicker
+                      inputStyle={{
                         margin: '10px 0',
                         width: '300px',
                         fontSize: 'medium',
-                        padding: ' 11px 10px',
+                        padding: '11px 10px',
                         fontWeight: '100',
                         border: ' 1px solid rgba(255, 74, 110, 0.5)',
                         borderRadius: '3px',
                         letterSpacing: '1px',
                       }}
-                      required=""
-                      id="id_start_date"
-                      className="jQdatePicker"
-                      name="start_date"
-                      type="date"
-                    />
-                  </label>
-                  <label
-                    style={{
-                      minWidth: '300px',
-                      marginTop: '21px',
-                      marginRight: '40px',
-                      display: 'block',
-                      fontSize: '1.2em',
-                      verticalAlign: 'bottom',
-                      marginMarginBottom: '15px',
-                      fontWeight: '100',
-                      letterSpacing: '1px',
-                    }}
-                    htmlFor="id_start_time"
-                  >
-                    Event time
-                    <input
-                      style={{
-                        display: 'block',
-                        margin: '10px 0',
-                        width: '300px',
-                        fontSize: 'medium',
-                        padding: ' 11px 10px',
-                        fontWeight: '100',
-                        border: ' 1px solid rgba(255, 74, 110, 0.5)',
-                        borderRadius: '3px',
-                        letterSpacing: '1px',
+                      onChange={value => {
+                        // do something...
                       }}
-                      required=""
-                      id="id_start_time"
-                      className="jQtimePicker"
-                      name="start_time"
-                      type="time"
                     />
                   </label>
                 </div>
@@ -178,16 +132,7 @@ class CreateEvent extends React.Component {
                     fontWeight: '100',
                   }}
                 >
-                  {' '}
-                  <img
-                    style={{
-                      height: '35px',
-                      width: 'auto',
-                      margin: ' 0 5px',
-                    }}
-                    src={Ticket}
-                    alt="ticket"
-                  />{' '}
+                  <TicketIcon />
                   Create Ticket
                 </label>
 
@@ -196,7 +141,18 @@ class CreateEvent extends React.Component {
                   className="ticket-types"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr 1fr 1fr',
+
+                    ...(window.width > 980
+                      ? {
+                          gridTemplateColumns: '1fr 1fr 1fr',
+                        }
+                      : window.width > 450
+                        ? {
+                            gridTemplateColumns: '1fr 1fr',
+                          }
+                        : {
+                            gridTemplateColumns: '1fr',
+                          }),
                   }}
                 >
                   {this.state.tickets.map((t, i) => (
@@ -217,10 +173,18 @@ class CreateEvent extends React.Component {
                       borderRadius: '3px',
                       margin: '0 20px 20px 0',
                       padding: '20px',
-                      width: '342px',
+
                       height: ' 368px',
                       overflow: 'hidden',
                       display: 'flex',
+
+                      ...(window.width > 980
+                        ? {
+                            width: '342px',
+                          }
+                        : {
+                            width: '315px',
+                          }),
                     }}
                   >
                     <a
@@ -260,13 +224,19 @@ class CreateEvent extends React.Component {
                   </div>
                 </div>
 
-                <p className="tcs">
+                <p className="tcs" style={{ textAlign: 'center' }}>
                   By clicking "Create" you're agreeing to
-                  <a href="/en/tandc/#tandc-organiser" target="_blank">
-                    the T&amp;C's
+                  <a
+                    href="/en/tandc/#tandc-organiser"
+                    target="_blank"
+                    style={{ color: '#ff4a6e', textDecoration: 'none' }}
+                  >
+                    <span> the T&amp;C's</span>
                   </a>.
                 </p>
-                <button className="createEventButton">Create event</button>
+                <Button style={{ display: 'block', margin: '0 auto' }}>
+                  create event
+                </Button>
               </form>
             </section>
           )}

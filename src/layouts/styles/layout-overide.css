@@ -14,13 +14,8 @@ body {
     font-family: Quicksand, sans-serif;
     height: 100%;
 }
-button{
-    text-transform: uppercase !important;
-}
-button:hover{
-    background: white !important;
-    color: #ff4a6e !important;
-}
+
+
 a:hover {
     color: #ff4a6e !important;
     text-decoration: none
@@ -43,7 +38,7 @@ svg{
     vertical-align: middle;
 }
 .menuVisible{
-right: 250px;
-    transform: translateX(0);
+right: 250px!important;
+    
 
 }

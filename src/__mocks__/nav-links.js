@@ -19,12 +19,12 @@ export default [
   },
   {
     type: 'gatsbyLink',
-    link: '/my-tickets/',
+    link: '/',
     caption: 'My tickets',
   },
   {
     type: 'gatsbyLink',
-    link: '/login/',
+    link: '/',
     caption: 'Login',
   },
 ]
