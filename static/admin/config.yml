@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: billetfix/homepage
+    
+media_folder: static/img
+public_folder: img
+
+
+collections:
+  
+  - name: blog
+    label: Blog
+    folder: content/nav
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: path, label: Path }
+      - name: items
+        label: Items
+        widget: list
+        fields:
+          - { name: label, label: Label }
+          - { name: path, label: Path }
+  
+          
