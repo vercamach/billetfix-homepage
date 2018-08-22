@@ -15,5 +15,4 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: path, label: Path }
-     
-          
+      - { name: image, label: Image, widget: image, required: false }
