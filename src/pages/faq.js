@@ -88,6 +88,7 @@ const faq = () => {
                     return (
                       <li>
                         <a
+                          href={'#' + faq.id}
                           style={{
                             ...(window.width > 400
                               ? {
@@ -115,7 +116,7 @@ const faq = () => {
                 {faqs.filter(({ type }) => type === 'organiser').map(faq => (
                   <li>
                     <h4
-                      id={faq.id}
+                      id={faq.id + 1}
                       style={{
                         fontSize: '18px',
                         textTransform: 'uppercase',
@@ -146,7 +147,7 @@ const faq = () => {
                 {faqs.filter(({ type }) => type === 'guest').map(faq => (
                   <li>
                     <h4
-                      id={faq.id}
+                      id={faq.id + 1}
                       style={{
                         fontSize: '18px',
                         textTransform: 'uppercase',

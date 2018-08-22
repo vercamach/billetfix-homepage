@@ -10,6 +10,7 @@ export const SmileyHiIcon = ({ style }) => {
         verticalAlign: 'middle',
         margin: ' 0 5px',
         height: '15em',
+        ...style,
       }}
       version="1.1"
       id="Layer_1"

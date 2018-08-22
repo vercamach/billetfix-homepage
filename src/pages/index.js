@@ -19,6 +19,7 @@ const IndexPage = () => (
     <PictureRight />
     <Features />
     <PictureLeft />
+
     <TicketPrice />
   </Layout>
 )

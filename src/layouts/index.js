@@ -39,13 +39,7 @@ export const Layout = ({ children, data, staticHeader = true }) => (
               justifyContent: 'space-between',
               zIndex: '999',
               transition: 'all 0.5s',
-              ...(window.width > 450
-                ? {
-                    padding: '15px 5%',
-                  }
-                : {
-                    padding: '5px 5%',
-                  }),
+              padding: '15px 5%',
             }}
           >
             <a href="/">
@@ -73,7 +67,7 @@ export const Layout = ({ children, data, staticHeader = true }) => (
                       transform: 'translateX(100%)',
                       position: 'absolute',
                       textAlign: 'center',
-                      top: '65px',
+                      top: '75px',
                       right: '-140px',
                       width: '80%',
                       maxWidth: '250px',

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import { WindowHelper } from '../components/helpers'
 import FooterData from '../__mocks__/footer'
+import { FBIcon } from './icons/fbIcon'
 
 const Footer = () => {
   return (
@@ -92,17 +93,7 @@ const Footer = () => {
               )}
               {FooterData.filter(({ type }) => type === 'icon').map(data => (
                 <li>
-                  <img
-                    style={{
-                      height: '24px',
-                      width: '24px',
-                      display: 'inline-block',
-                      verticalAlign: 'middle',
-                      margin: '0 5px',
-                    }}
-                    src={data.src}
-                    alt={data.alt}
-                  />
+                  <FBIcon />
                   <a
                     style={{
                       color: '#ff4a6e',
