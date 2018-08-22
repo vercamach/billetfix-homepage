@@ -4,7 +4,7 @@ import abouts from '../__mocks__/about'
 import { Layout } from '../layouts/index'
 import { WindowHelper } from '../components/helpers'
 
-const About = () => {
+const FreeText = () => {
   return (
     <Layout>
       <WindowHelper>
@@ -73,4 +73,4 @@ const About = () => {
   )
 }
 
-export default About
+export default FreeText

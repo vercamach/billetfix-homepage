@@ -1,6 +1,6 @@
 import React from 'react'
 import { SmileyHiIcon } from './icons/smileyHiIcon'
-import Logos from './fbTwitterLogos'
+import Logos from './soc-med-icons'
 import { WindowHelper } from '../components/helpers'
 
 const Teaser = () => {
