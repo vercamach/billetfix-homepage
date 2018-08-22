@@ -15,11 +15,5 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: path, label: Path }
-      - name: items
-        label: Items
-        widget: list
-        fields:
-          - { name: label, label: Label }
-          - { name: path, label: Path }
-  
+     
           
