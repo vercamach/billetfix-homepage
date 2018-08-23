@@ -6,6 +6,7 @@
   "dependencies": {
     "date-fns": "^1.29.0",
     "date-time-picker-react": "^0.2.1",
+    "font-awesome": "^4.7.0",
     "gatsby": "^1.9.247",
     "gatsby-cli": "^1.1.58",
     "gatsby-link": "^1.6.40",

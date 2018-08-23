@@ -7,12 +7,52 @@ public_folder: img
 
 
 collections:
-  
-  - name: blog
-    label: Blog
-    folder: content/nav
+
+# navigation
+
+  - name: top-navigation
+    label: Top Navigation
+    folder: content/top-navigation
     create: true
     fields:
       - { name: title, label: Title }
       - { name: path, label: Path }
-      - { name: image, label: Image, widget: image, required: false }
+      - name: items
+        label: Items
+        widget: list
+        fields: 
+          - { name: label, label: Label}
+          - { name: path, label: Path}
+
+#footer
+
+  - name: footer-menu
+    label: Footer Menu
+    folder: content/footer-menu
+    create: true
+    fields: 
+      - { name: title, path: Title }
+      - { name: path, label: Path }
+      - name: items
+        label: Items
+        widget: list
+        fields:
+          - { name: label, label: Label}
+          - { name: path, label: Path}
+
+
+      
+#contact 
+  - name: contact
+    label: Contact
+    folder: content/contact
+    create: true
+    fields:
+      - { name: title, label: Title, required: false }
+      - { name: path, label: Path, required: false }
+      - { name: address, label: Address, required: false }
+      - { name: phone, label: phone Number, required: false }
+      - { name: support, label: General Support, required: false }
+  
+      
+

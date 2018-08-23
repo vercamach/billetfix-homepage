@@ -32,8 +32,13 @@ const components = [
   { Component: Footer, id: 'footer' },
 ]
 const CmsPage = ({ pathContext }) => (
-  <Layout>
-    <ContactForm />
+  <Layout {...pathContext.layout}>
+    {pathContext.sections &&
+      pathContext.sections.map((section, i) => {
+        const Component = components.find(({ id }) => id === section.type)
+          .Component
+        return <Component key={i} {...section} />
+      })}
   </Layout>
 )
 

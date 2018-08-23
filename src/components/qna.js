@@ -22,7 +22,7 @@ const faq = () => {
             style={{
               overflow: 'hidden',
 
-              ...(window.widt > 980
+              ...(window.width > 980
                 ? {
                     padding: '125px 6%',
                   }
