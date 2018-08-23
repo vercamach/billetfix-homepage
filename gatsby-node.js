@@ -21,7 +21,7 @@ const query = `query IndexQuery {
     }
   }
 
-  NavigationMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-navigation/"}}) {
+ TopNavigation: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-navigation/"}}) {
     edges {
       node {
         frontmatter {
@@ -76,7 +76,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         if (res.errors || res.messages) {
           reject(res.errors + ' ' + res.messages)
         }
-        let { Pages, NavigationMenu, FooterMenu, Contact } = res.data
+        let { Pages, TopNavigation, FooterMenu, Contact } = res.data
         Pages.edges.forEach(({ node }) => {
           createPage({
             path: node.frontmatter.path,
@@ -85,11 +85,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             context: {
               sections: node.frontmatter.sections,
               layout: {
-                TopMenu: TopMenu.edges[0].node.frontmatter.items,
+                TopNavigation: TopNavigation.edges[0].node.frontmatter.items,
                 FooterMenu: FooterMenu.edges[0].node.frontmatter.items,
-                Features: FooterMenu.edges[0].node.frontmatter.features,
-                Integration: FooterMenu.edges[0].node.frontmatter.integration,
-                Company: FooterMenu.edges[0].node.frontmatter.company,
                 Contact: Contact.edges[0].node.frontmatter,
               },
             },

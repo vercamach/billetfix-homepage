@@ -31,11 +31,11 @@ const components = [
   { Component: QNA, id: 'qna' },
   { Component: Footer, id: 'footer' },
 ]
-const CmsPage = ({ pathContext }) => (
+const CmsP = ({ pathContext }) => (
   <Layout>
     <ContactForm />
     <CreateEvent />
   </Layout>
 )
 
-export default CmsPage
+export default CmsP

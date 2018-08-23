@@ -4,7 +4,7 @@ import abouts from '../__mocks__/about'
 import { Layout } from '../layouts/index'
 import { WindowHelper } from '../components/helpers'
 
-const FreeText = () => {
+const FreeText = article => {
   return (
     <Layout>
       <WindowHelper>
@@ -60,7 +60,7 @@ const FreeText = () => {
                         fontWeight: '100',
                       }}
                     >
-                      {part.paragraph}
+                      {article}
                     </p>
                   ))}
                 </div>

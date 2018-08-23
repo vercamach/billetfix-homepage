@@ -58,7 +58,7 @@ collections:
 
   - name: pages
   - label: Pages
-    folder: cntent/pages
+    folder: content/pages
     create: true
     fields: 
       - { name: path, label: Path }
