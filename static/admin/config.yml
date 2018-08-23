@@ -54,5 +54,42 @@ collections:
       - { name: phone, label: phone Number, required: false }
       - { name: support, label: General Support, required: false }
   
-      
+#all pages
 
+  - name: pages
+  - label: Pages
+    folder: cntent/pages
+    create: true
+    fields: 
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: meta_description, label: Meta Description, required: false}
+      - name: sections
+      - label: Sections
+        widget: list
+        fields:
+          - name: type
+            label: Type
+            widget: select
+            options:
+              - { label: Hero Section, value: hero_section}
+              - { label: Partners, value: partners }
+              - { label: Picture Right, value: picture_right}
+              - { label: Features, value: features }
+              - { label: Create Event Form, value: create_event_form }
+              - { label: Picutre Left, value: picture_left }
+              - { label: Contact Form, value: contact_form }
+              - { label: Pricing Cards, value: pricing_cards }
+              - { label: Social Media Icons, value: soc_med_icons}
+              - { label: Article, value: article }
+              - { label: Legal, value: legal }
+              - { label: QNA, value: qna }
+              - { label: Footer, value: footer}
+          
+          - { name: heading, label: Heading, required: false }
+          - { name: text, label: Text, required: false }
+          - { name: image, label: Image, widget: image, required: false }
+          - { name: image_alt, label: Image Alt, required: false }
+          - { name: button_text, label: Button Text, required: false }
+          - { name: button_link, label: Button Link, required: false }
+          

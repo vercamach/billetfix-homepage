@@ -4,7 +4,7 @@ import '../layouts/styles/layout-overide.css'
 import Partners from '../components/partners'
 import PictureRight from '../components/picture-right'
 import Features from '../components/features'
-import CreateEvent from '../components/create-event'
+import CreateEventForm from '../components/create-event'
 import { Layout } from '../layouts/index'
 import HeroSection from '../components/hero-section'
 import PictureLeft from '../components/picture-left'
@@ -17,11 +17,11 @@ import Legal from '../components/legal'
 import QNA from '../components/qna'
 
 const components = [
+  { Component: HeroSection, id: 'hero_section' },
   { Component: Partners, id: 'partners' },
   { Component: PictureRight, id: 'picture_right' },
   { Component: Features, id: 'features' },
-  { Component: CreateEvent, id: 'create_event' },
-  { Component: HeroSection, id: 'hero_section' },
+  { Component: CreateEventForm, id: 'create_event_form' },
   { Component: PictureLeft, id: 'picture_left' },
   { Component: ContactForm, id: 'contact_form' },
   { Component: PricingCards, id: 'pricing_cards' },

@@ -34,6 +34,7 @@ const components = [
 const CmsPage = ({ pathContext }) => (
   <Layout>
     <ContactForm />
+    <CreateEvent />
   </Layout>
 )
 
