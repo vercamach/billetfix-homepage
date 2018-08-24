@@ -29,7 +29,6 @@ const components = [
   { Component: Article, id: 'article' },
   { Component: Legal, id: 'legal' },
   { Component: QNA, id: 'qna' },
-  { Component: Footer, id: 'footer' },
 ]
 const CmsPage = ({ pathContext }) => (
   <Layout {...pathContext.layout}>

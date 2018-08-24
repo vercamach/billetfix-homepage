@@ -21,7 +21,7 @@ const styles = {
   },
 }
 
-export const Layout = ({ children, data, staticHeader = true }) => (
+export const Layout = ({ children, data, staticHeader }) => (
   <div>
     <div>
       <WindowHelper>
