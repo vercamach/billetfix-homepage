@@ -57,7 +57,7 @@ collections:
 #all pages
 
   - name: pages
-  - label: Pages
+    label: Pages
     folder: content/pages
     create: true
     fields: 
