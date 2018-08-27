@@ -89,7 +89,7 @@ collections:
           - { name: heading, label: Heading, required: false }
           - { name: text, label: Text, required: false }
           - { name: image, label: Image, widget: image, required: false }
-          - { name: image_alt, label: Image Alt, required: false }
+
           - { name: button_text, label: Button Text, required: false }
           - { name: button_link, label: Button Link, required: false }
           
