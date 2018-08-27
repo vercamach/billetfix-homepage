@@ -20,52 +20,52 @@ const query = `query IndexQuery {
       }
     }
   }
+}
+
+TopMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-menu/"}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          path
+          items {
+            path
+            label
+          }
+        }
+      }
+    }
+  }
+  FooterMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/footer-menu/"}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          path
+          items {
+            path
+            label
+          }
+
+        }
+      }
+    }
+  }
+  Contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/contact/"}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          path
+          address
+          phone
+          support
+        }
+      }
+    }
+  }
+
 }`
-
-// TopMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-menu/"}}) {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           path
-//           items {
-//             path
-//             label
-//           }
-//         }
-//       }
-//     }
-//   }
-//   FooterMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/footer-menu/"}}) {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           path
-//           items {
-//             path
-//             label
-//           }
-
-//         }
-//       }
-//     }
-//   }
-//   Contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/contact/"}}) {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           path
-//           address
-//           phone
-//           support
-//         }
-//       }
-//     }
-//   }
-
-// }`
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
