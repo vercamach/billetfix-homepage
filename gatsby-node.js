@@ -11,9 +11,7 @@ const query = `query IndexQuery {
             type
             heading
             text
-            image
-            button_text
-            button_link
+           
           } 
         }
       }
