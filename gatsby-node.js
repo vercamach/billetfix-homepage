@@ -20,52 +20,52 @@ const query = `query IndexQuery {
       }
     }
   }
-}
-
-TopMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-menu/"}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          path
-          items {
-            path
-            label
-          }
-        }
-      }
-    }
-  }
-  FooterMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/footer-menu/"}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          path
-          items {
-            path
-            label
-          }
-
-        }
-      }
-    }
-  }
-  Contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/contact/"}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          path
-          address
-          phone
-          support
-        }
-      }
-    }
-  }
-
 }`
+
+// TopMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/top-menu/"}}) {
+//     edges {
+//       node {
+//         frontmatter {
+//           title
+//           path
+//           items {
+//             path
+//             label
+//           }
+//         }
+//       }
+//     }
+//   }
+//   FooterMenu: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/footer-menu/"}}) {
+//     edges {
+//       node {
+//         frontmatter {
+//           title
+//           path
+//           items {
+//             path
+//             label
+//           }
+
+//         }
+//       }
+//     }
+//   }
+//   Contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/contact/"}}) {
+//     edges {
+//       node {
+//         frontmatter {
+//           title
+//           path
+//           address
+//           phone
+//           support
+//         }
+//       }
+//     }
+//   }
+
+// }`
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
@@ -94,7 +94,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               layout: {
                 // TopNavigation: TopNavigation.edges[0].node.frontmatter.items,
                 // FooterMenu: FooterMenu.edges[0].node.frontmatter.items,
-                // Contact: Contact.edges[0].node.frontmatter,
+                //  Contact: Contact.edges[0].node.frontmatter,
               },
             },
           })

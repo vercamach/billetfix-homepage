@@ -1,7 +1,7 @@
 import React from 'react'
 import { WindowHelper } from '../components/helpers'
 import { MobilePayIcon } from './icons/mobilePayIcon'
-const pictureLeft = () => {
+const pictureLeft = props => {
   return (
     <WindowHelper>
       {window => (
@@ -44,7 +44,7 @@ const pictureLeft = () => {
                     }),
               }}
             >
-              Guests can pay with MobilePay or their credit card
+              {props.heading}
             </h3>
             <p
               style={{
@@ -66,7 +66,7 @@ const pictureLeft = () => {
                     }),
               }}
             >
-              50% of our users pay with MobilePay.
+              {props.text}
             </p>
             <p
               style={{
@@ -103,7 +103,7 @@ const pictureLeft = () => {
             }}
           >
             {' '}
-            <MobilePayIcon />
+            <img src={props.image} />
           </div>
         </section>
       )}
