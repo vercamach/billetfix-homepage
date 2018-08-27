@@ -12,7 +12,6 @@ const query = `query IndexQuery {
             heading
             text
             image
-            image_alt
             button_text
             button_link
           } 

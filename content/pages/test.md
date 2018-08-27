@@ -8,7 +8,6 @@ sections:
   - button_link: '#contact'
     button_text: Kontakt os!
     heading: Dit skræddersyede billetsystem
-    image: /img/splash-new.png
     text: Din data. Dit brand. Din succes
     type: header
   
