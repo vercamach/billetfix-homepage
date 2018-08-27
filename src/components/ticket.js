@@ -27,13 +27,7 @@ let styles = {
     border: '1px solid rgba(255, 74, 110, 0.5)',
     borderRadius: '3px',
     letterLetterspacing: '1px',
-    ...(window.width > 450
-      ? {
-          width: '300px',
-        }
-      : {
-          width: '275px',
-        }),
+    width: '300px',
   },
 }
 
