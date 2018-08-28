@@ -1,13 +1,14 @@
 ---
-path: /da/
-title: Ticketbutler – Dit skræddersyede billetsystem
-meta_description: >-
-  Tiltræk flere kunder og sælg billetter med et full scale billetsystem, som
-  matcher dit brand. 
+path: /left
+title: left
+meta_description: left
 sections:
-  - button_link: '#contact'
-    button_text: Kontakt os!
-    heading: Dit skræddersyede billetsystem
-    text: Din data. Dit brand. Din succes
-    type: header
-  
+  - button_link: ''' '''
+    button_text: ''' '''
+    heading: left
+    image: /img/payment.svg
+    image_alt: left
+    text: left
+    type: picture_left
+---
+

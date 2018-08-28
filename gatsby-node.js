@@ -11,7 +11,10 @@ const query = `query IndexQuery {
             type
             heading
             text
-           
+            image
+            image_alt
+            button_text
+            button_link
           } 
         }
       }
